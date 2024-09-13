@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Secret Page</title>
+    <link rel="stylesheet" href="ai.css">
+</head>
+<body>
+    <header>
+        <h1></h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <h1 class="glitch">You've Found the Secret!</h1>
+    <p>Welcome, traveler of the hidden paths! Click the button below to reveal a random hidden message just for you!</p>
+    <button onclick="generateMessage()">Reveal the Message</button>
+    <p id="message"></p>
+
+    <script>
+        const messages = [
+            "The cake is a lie!",
+            "You’ve unlocked 10 internet points!",
+            "404: Fun not found. Oh wait, here it is!",
+            "You are the chosen one!",
+            "Don’t tell anyone about this!",
+            "This is your sign. Go do the thing!",
+            "You’ve discovered the hidden world!",
+            "The secret to life is... 42.",
+            "Behind every corner, there’s a new adventure waiting!",
+            "You’ve leveled up!",
+            "But where is Alice?"
+        ];
+
+        function generateMessage() {
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            document.getElementById('message').innerText = messages[randomIndex];
+        }
+    </script>
+</body>
+</html>

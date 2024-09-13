@@ -1,0 +1,51 @@
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 4em;
+    color: #4caf50;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #f0f0f0;
+}
+
+.glitch {
+    font-size: 2em;
+    color: #f0f0f0;
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    0% { color: #fff; }
+    25% { color: #4caf50; }
+    50% { color: #fff; }
+    75% { color: #ff0066; }
+    100% { color: #fff; }
+}
