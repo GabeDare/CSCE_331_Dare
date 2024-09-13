@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Basic Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Technical Portfolio</title>
+    <link id="theme-style" rel="stylesheet" href="styles_default.css">
 </head>
-<body>
+<body onload="applySavedStyle()">
     <header>
         <h1>My Portfolio</h1>
         <nav>
@@ -21,8 +21,9 @@
         </nav>
     </header>
 
+    <button onclick="toggleStyle()">Toggle Style</button>
+    
     <!--- This is where my 300 words are. --->
-
     <main>
         <section>
             <h2>Software Engineer Intern (May 2024 - Aug 2024)</h2>
@@ -93,5 +94,28 @@
     <footer>
         <p> </p>
     </footer>
+
+    <script>
+        function toggleStyle() {
+            const themeStyle = document.getElementById('theme-style');
+            if (themeStyle.getAttribute('href') === 'styles_default.css') {
+                themeStyle.setAttribute('href', 'styles_alt.css');
+                localStorage.setItem('selectedStyle', 'styles_alt.css');
+            } else {
+                themeStyle.setAttribute('href', 'styles_default.css');
+                localStorage.setItem('selectedStyle', 'styles_default.css');
+            }
+        }
+
+        function applySavedStyle() {
+            const savedStyle = localStorage.getItem('selectedStyle');
+            const themeStyle = document.getElementById('theme-style');
+            if (savedStyle) {
+                themeStyle.setAttribute('href', savedStyle);
+            } else {
+                themeStyle.setAttribute('href', 'styles_default.css');
+            }
+        }
+    </script>
 </body>
 </html>
